@@ -1,13 +1,19 @@
 import React, { use } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import loginAnimation from "../../../src/assets/Animation - 1748338072161.json";
 import { AuthContext } from "../../Context/AuthContext";
 import Lottie from "lottie-react";
 import Swal from "sweetalert2";
+import Divider from "../../Components/Divider/Divider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { signInUser } = use(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+const from = location.state?.from?.pathname || "/";
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -23,7 +29,7 @@ const Login = () => {
           icon: "success",
         });
         e.target.reset();
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.error(err);
@@ -80,6 +86,8 @@ const Login = () => {
                 Login
               </button>
             </form>
+            <Divider />
+            <SocialLogin from={from} />
           </div>
         </div>
       </div>

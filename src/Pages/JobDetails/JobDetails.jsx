@@ -14,7 +14,6 @@ const JobDetails = () => {
     requirements,
     salaryRange,
   } = useLoaderData();
-  console.log(title);
 
   return (
     <div className="h-[70vh] flex items-center justify-center flex-col">

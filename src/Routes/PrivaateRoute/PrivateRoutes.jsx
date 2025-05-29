@@ -6,9 +6,9 @@ import Loading from "../../Components/Loading/Loading";
 const PrivateRoutes = ({ children }) => {
   const location = useLocation();
   const { user, loading } = use(AuthContext);
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }

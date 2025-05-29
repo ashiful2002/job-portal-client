@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
         Component: JobDetails,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/jobs/${params.id}`),
-        hydrateFallbackElement: <Loading />,
+        // hydrateFallbackElement: <Loading />,
       },
       {
         path: "/jobApply/:id",

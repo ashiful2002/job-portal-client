@@ -10,6 +10,12 @@ const Navbar = () => {
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
+
+      {user && (
+        <>
+          <NavLink to="/myApplications">User Applications</NavLink>
+        </>
+      )}
     </>
   );
   return (

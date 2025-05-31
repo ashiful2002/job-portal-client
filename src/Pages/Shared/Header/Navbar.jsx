@@ -11,11 +11,19 @@ const Navbar = () => {
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
 
+      {/*  applicant links check roles as well  */}
       {user && (
         <>
           <NavLink to="/myApplications">User Applications</NavLink>
         </>
       )}
+
+      {/*Links for recruter,  links check roles as well  */}
+      {
+        <>
+          <NavLink to="/addJob">Add Job</NavLink>
+        </>
+      }
     </>
   );
   return (

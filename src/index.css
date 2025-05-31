@@ -1,5 +1,5 @@
 @import "tailwindcss";
 @plugin "daisyui";
 .active {
-  color: rebeccapurple;
+  color: rgb(170, 86, 255);
 }

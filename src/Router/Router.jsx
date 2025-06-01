@@ -10,11 +10,13 @@ import Loading from "../Components/Loading/Loading";
 import MyApplications from "../Pages/MyApplications/MyApplications";
 import AddJob from "../Pages/AddJob/AddJob";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import MyPostedJobs from "../Pages/MyPostedJobs/MyPostedJobs";
+import ViewApplications from "../Pages/MyPostedJobs/ViewApplications/ViewApplications";
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -56,7 +58,31 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addJob",
-        element: <AddJob />,
+        element: (
+          <PrivateRoutes>
+            <AddJob />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/myPostedJobs",
+        element: (
+          <PrivateRoutes>
+            <MyPostedJobs />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/application/:job_id",
+        element: (
+          <PrivateRoutes>
+            <ViewApplications></ViewApplications>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:3000/applications/job/${params.job_id}`
+          )
       },
     ],
   },

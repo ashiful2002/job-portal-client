@@ -16,6 +16,8 @@ const PostedJobList = ({ jobsCreatedByPromise }) => {
                 <th> Job Title</th>
                 <th>Company</th>
                 <th>Location</th>
+                <th>Count</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -25,9 +27,13 @@ const PostedJobList = ({ jobsCreatedByPromise }) => {
                   <th>{index + 1}</th>
                   <td>{job.title}</td>
                   <td>{job.company}</td>
+                  {console.log(job.application_count)}
                   <td>{job.location}</td>
+                  <td>{job.application_count}</td>
                   <td>
-                    <Link className="btn btn-xs" to={`/application/${job._id}`}>View Applications</Link>
+                    <Link className="btn btn-xs" to={`/application/${job._id}`}>
+                      View Applications
+                    </Link>
                   </td>
                 </tr>
               ))}

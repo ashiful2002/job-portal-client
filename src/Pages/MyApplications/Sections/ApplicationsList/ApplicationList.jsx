@@ -3,7 +3,7 @@ import ApplicationTableRow from "../../Components/ApplicationTableRow";
 
 const ApplicationList = ({ MyApplicationsPromise }) => {
   const applications = use(MyApplicationsPromise);
-  console.log(applications);
+  // console.log(applications);
 
   return (
     <div>

@@ -3,7 +3,7 @@ import React from "react";
 const ApplicationTableRow = ({ application, index }) => {
   const { applicant, github, linkedIn, resume, company, company_logo, title } =
     application;
-  console.log(application);
+  // console.log(application);
 
   return (
     <div>
